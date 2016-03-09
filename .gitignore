@@ -1,0 +1,20 @@
+# Gradle
+.gradle
+build/
+*.class
+db/**/*
+!src/main/resources/db/neo4j/neo4j.properties
+logs/**/*
+logs/**
+target/**
+jaunt_cache/**
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.war
+*.ear
+/bin
