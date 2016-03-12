@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import net.openhft.chronicle.map.ChronicleMap;
-import net.openhft.chronicle.map.ChronicleMapBuilder;
 
 public class MyMap
 {
@@ -33,9 +32,9 @@ public class MyMap
 	@PostConstruct
 	protected void initialize() throws IOException
 	{
-		chronicle = ChronicleMapBuilder.of(String.class, String.class)
-									.averageKeySize(AVERAGE_KEY_AND_VALUE.getBytes().length)
-									.averageValueSize(AVERAGE_KEY_AND_VALUE.getBytes().length)
+		chronicle = ChronicleMap.of(String.class, String.class)
+									.averageKey(AVERAGE_KEY_AND_VALUE)
+									.averageValue(AVERAGE_KEY_AND_VALUE)
 									.entries(MAX_SIZE)
 									.createPersistedTo(file);
 	}
